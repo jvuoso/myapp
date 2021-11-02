@@ -9,6 +9,11 @@ import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -84,9 +89,41 @@ export default function Navbar() {
           </Search>
         </Toolbar>
       </AppBar>
+    <BasicSelect/>
+    </Box>
+   
+  );
+}
+
+
+
+function BasicSelect() {
+  const [age, setAge] = React.useState('');
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+
+  return (
+    <Box sx={{ minWidth: 120 }}>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Seleccione la categoria de ropa</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={age}
+          label="Age"
+          onChange={handleChange}
+        >
+          <MenuItem value={"Shorts"}>Shorts</MenuItem>
+          <MenuItem value={"Remeras"}>Remeras</MenuItem>
+          <MenuItem value={"Zapatillas"}>Zapatillas</MenuItem>
+        </Select>
+      </FormControl>
     </Box>
   );
 }
+
 
 
 //export default Navbar;
