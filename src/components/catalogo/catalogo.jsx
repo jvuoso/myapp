@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import TitleComponent from './title/title';
+import MyCard from './mycard/mycard';
 
 class Catalogo extends Component {
     constructor (props){
@@ -11,6 +12,8 @@ class Catalogo extends Component {
     render() { 
         return <div>
             <TitleComponent name={this.state.name}/>
+            <TitleComponent name={"Marcelo"}/>
+            <MyCard/>
         </div>;
     }
 }
