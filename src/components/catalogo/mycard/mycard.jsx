@@ -12,7 +12,7 @@ export default function MyCard() {
       <CardMedia
         component="img"
         height="140"
-        image="./paella.jpg"
+        image="paella.jpg"
         alt="green iguana"
       />
       <CardContent>
