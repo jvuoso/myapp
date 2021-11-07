@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import paella from './paella.jpg';
 
 export default function MyCard() {
   return (
@@ -12,7 +13,7 @@ export default function MyCard() {
       <CardMedia
         component="img"
         height="140"
-        image="paella.jpg"
+        image= {paella}
         alt="green iguana"
       />
       <CardContent>
