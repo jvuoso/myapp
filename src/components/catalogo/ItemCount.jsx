@@ -23,7 +23,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         }
     }
 
-    
     return (
         <div>
             <h1> Contador</h1>
