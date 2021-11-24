@@ -57,14 +57,24 @@ const ItemListContainer = ({greeting}) => {
     })
 
         return (
-            <div>
+            <Box
+      sx={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        '& > :not(style)': {
+          m: 1,
+          width: 345,
+          height: 345,
+        },
+      }}>
+                <Paper elevation = {0}/>
                 <TitleComponent name={"Juan"} lastName={"Ignacio"}/>
-                <Box> 
-                    <Paper>
-                <ItemList products = {products}></ItemList>
-                    </Paper>  
-                </Box>
-            </div>
+                <Paper elevation={4}>
+                    <Box component="span" sx={{ color: 'primary.main', fontSize: 22 }}>
+                        <ItemList products = {products}></ItemList> 
+                    </Box>
+                </Paper> 
+            </Box>
         );
 }
  
