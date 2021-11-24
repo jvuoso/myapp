@@ -1,5 +1,6 @@
-import Item from './Item';
-const ItemList = ({products, items}) =>{
+import Item from './Item/Item';
+
+const ItemList = ({products}) =>{
     console.log("products: ", products) 
     return (
         <div>
@@ -10,6 +11,7 @@ const ItemList = ({products, items}) =>{
                 description={product.description}
                 key = {product.id}
                 stock = {product.stock}
+                image = {product.image}
                 />
                 );
             })}

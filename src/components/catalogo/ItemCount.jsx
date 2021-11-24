@@ -76,8 +76,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
           
 
       </Box>
-
-
       </Box>
       
     );

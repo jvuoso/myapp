@@ -5,26 +5,26 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import paella from './paella.jpg';
+//import paella from './paella.jpg';
 import ItemCount from '../ItemCount'
 
-export default function MyCard() {
+export default function Item({name, stock, description, image, key}) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="140"
-        image= {paella}
-        alt="green iguana"
+        image= {image}
+        alt= {name}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Paella
+          {name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-        La paella es quizá el platillo de origen español más conocido en el mundo y recibe su nombre por la gran sartén en la que se cocina. Se originó entre los siglos XV y XVI cerca del lago Albufera en Valencia, España, como un alimento de campesinos y pastores.
+        {description}
         </Typography>
-        <ItemCount stock={5} initial={2} />
+        <ItemCount stock={stock} initial={1} />
       </CardContent>
       <CardActions>
         <Button size="small">Add to chart</Button>
