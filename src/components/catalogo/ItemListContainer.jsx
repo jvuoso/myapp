@@ -62,7 +62,7 @@ const ItemListContainer = ({greeting}) => {
 
 
     //const [getAxios, responseAxios] = useState([])
-        const getProductsAxios = async () => {
+   /*      const getProductsAxios = async () => {
             const getAxios = await axios.get("../JSON/products.json");
             const responseAxios = getAxios.data;
             console.log("Respuesta del Axios", responseAxios)
@@ -72,10 +72,10 @@ const ItemListContainer = ({greeting}) => {
     useEffect(() => {
         setTimeout(() => getProductsAxios(), 1000);
     }, []);
+ */
 
 
 
-    
 
         return (
             <Box
