@@ -1,6 +1,6 @@
 import Item from './Item/Item';
 
-const ItemList = ({products}) =>{
+const ItemList = ({ products }) =>{
     console.log("products: ", products) 
     return (
         <div>
@@ -8,10 +8,11 @@ const ItemList = ({products}) =>{
                 return(
                 <Item 
                 name = {product.name}
-                description={product.description}
-                key = {product.id}
+                //description={product.description}
+                id = {product.id}
                 stock = {product.stock}
                 image = {product.image}
+                key = {product.id}
                 />
                 );
             })}

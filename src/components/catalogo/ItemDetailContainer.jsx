@@ -1,12 +1,16 @@
 import TitleComponent from './title/title';
 import {useState, useEffect} from 'react'
-import ItemList from './ItemList'
-import Paper from '@mui/material/Paper'
-import Box from '@mui/material/Box'
-import axios from "axios"
+//import ItemList from './ItemList'
+//import Paper from '@mui/material/Paper'
+//import Box from '@mui/material/Box'
+import ItemDetail from './ItemDetail'
+import ItemListContainer from './ItemListContainer'
+import { useParams } from "react-router-dom"
 
+const ItemDetailContainer = () => {
 
-const ItemListContainer = ({greeting}) => {
+    const [item, setItem] = useState({})
+    const {id} = useParams()
 
     const data = [
         {
@@ -39,16 +43,6 @@ const ItemListContainer = ({greeting}) => {
         }
     ]; 
 
-    const [products, setProducts] = useState([])
-    console.log('Los productos en el hook son', products)
-
-    useEffect(() => {
-        handPromise 
-        .then (res => {
-            setProducts(res)
-        })
-        .catch(err => alert('Estamos al aire', err))
-    }, []);
 
     const handPromise = new Promise((resolve, reject) => {
         setTimeout( () => {
@@ -57,46 +51,15 @@ const ItemListContainer = ({greeting}) => {
         }, 2000)
     })
 
-
-
-
-
-    //const [getAxios, responseAxios] = useState([])
-        const getProductsAxios = async () => {
-            const getAxios = await axios.get("../JSON/products.json");
-            const responseAxios = getAxios.data;
-            console.log("Respuesta del Axios", responseAxios)
-            setProducts(responseAxios)
-    } 
-
     useEffect(() => {
-        setTimeout(() => getProductsAxios(), 1000);
-    }, []);
+        handPromise.then(
+            (res) => {
+            setItem(res.find( (id) => item.id === id));
+            console.log(item.id)
+        });
+    }, [id]);
 
+    return (<ItemDetail product={data[0]} />)
+};
 
-
-    
-
-        return (
-            <Box
-                sx={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    '& > :not(style)': {
-                    m: 1,
-                    width: 345,
-                    height: 345,
-                    },
-             }}>
-                <Paper elevation = {0}/>
-                    <TitleComponent name={"Juan"} lastName={"Ignacio"}/>
-                <Paper elevation={4}>
-                    <Box component="span" sx={{ color: 'primary.main', fontSize: 22 }}>
-                        <ItemList products = {products}></ItemList> 
-                    </Box>
-                </Paper> 
-            </Box>
-        );
-}
- 
-export default ItemListContainer;
+export default ItemDetailContainer;

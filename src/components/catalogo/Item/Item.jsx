@@ -7,8 +7,12 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 //import paella from './paella.jpg';
 import ItemCount from '../ItemCount'
+//import ItemDetail from '../ItemDetail'
+import { Link } from "react-router-dom"
 
-export default function Item({name, stock, description, image, key}) {
+export default function Item({name, stock, description, image, id}) {
+  console.log("id ", id)
+  if (!description) {description = "More information"}
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -22,7 +26,9 @@ export default function Item({name, stock, description, image, key}) {
           {name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-        {description}
+          <Link to={`/item/${id}`}>
+            {description}
+          </Link>
         </Typography>
         <ItemCount stock={stock} initial={1} />
       </CardContent>
