@@ -8,11 +8,13 @@ const ItemDetail = ({ product} ) => {
         <div>
             <h3>hola soy {product.name}</h3>
             <Item 
-                    name = {product.name}
-                    description={product.description}
-                    id = {product.id}
-                    stock = {product.stock}
-                    image = {product.image}
+                name = {product.name}
+                description={product.description}
+                id = {product.id}
+                stock = {product.stock}
+                price = {product.price}
+                image = {product.image}
+                key = {product.id}         
             />
         </div>
     );

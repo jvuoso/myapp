@@ -10,7 +10,7 @@ import ItemCount from '../ItemCount'
 //import ItemDetail from '../ItemDetail'
 import { Link } from "react-router-dom"
 
-export default function Item({name, stock, description, image, id}) {
+export default function Item({name, stock, description, image, id, price}) {
   console.log("id ", id)
   if (!description) {description = "More information"}
   return (
@@ -25,6 +25,7 @@ export default function Item({name, stock, description, image, id}) {
         <Typography gutterBottom variant="h5" component="div">
           {name}
         </Typography>
+        <p>${price}</p>
         <Typography variant="body2" color="text.secondary">
           <Link to={`/item/${id}`}>
             {description}
