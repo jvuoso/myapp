@@ -1,11 +1,11 @@
-import TitleComponent from './title/title';
 import {useState, useEffect} from 'react'
 //import ItemList from './ItemList'
 //import Paper from '@mui/material/Paper'
 //import Box from '@mui/material/Box'
 import ItemDetail from './ItemDetail'
-import ItemListContainer from './ItemListContainer'
+//import ItemListContainer from './ItemListContainer'
 import { useParams } from "react-router-dom"
+// eslint-disable-next-line
 
 const ItemDetailContainer = () => {
 
@@ -47,23 +47,20 @@ const ItemDetailContainer = () => {
         }
     ]; 
 
-
-    const handPromise = new Promise((resolve, reject) => {
+    const getProducts = new Promise((resolve, reject) => {
         setTimeout( () => {
             resolve(data)
-            reject('Algo paso')
-        }, 2000)
+        }, 1000)
     })
 
     useEffect(() => {
-        handPromise.then(
-            (res) => {
-            setItem(res.find( (id) => item.id === id));
-            console.log(item.id)
+        getProducts.then((res) => {
+            setItem(res.find( (prod) => prod.id === id));
         });
     }, [id]);
 
-    return (<ItemDetail product={data[0]} />)
+    //console.log("item: ", item)
+    return (<ItemDetail product={item} />);
 };
 
 export default ItemDetailContainer;

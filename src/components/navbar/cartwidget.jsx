@@ -7,16 +7,18 @@ const CartWidget = () => {
      
     //const [count, setCount] = useState(cart)
 
-        return  (           
-            <IconButton
-            size="large"
-            aria-label="show 10 new items in the cart"
-            color="inherit"
-        >
-            <Badge badgeContent="15" color="error">
-            <ShoppingCartIcon  />
-            </Badge>
-        </IconButton>);
+        return  (     
+            <div>    
+                <IconButton
+                size="large"
+                aria-label="show 10 new items in the cart"
+                color="inherit"
+                >
+                <Badge badgeContent="15" color="error">
+                    <ShoppingCartIcon  />
+                </Badge>
+                </IconButton>
+            </div>  );
 }
 
 
