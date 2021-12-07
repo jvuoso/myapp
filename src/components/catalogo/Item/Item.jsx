@@ -6,10 +6,12 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 //import ItemCount from '../ItemCount'
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
+//import styled from 'styled-components';
+
 
 export default function Item({name, stock, description, image, id, price}) {
-  //console.log("id ", id)
+  
   if (!description) {description = "More information"}
   return (
     <div>
@@ -25,11 +27,9 @@ export default function Item({name, stock, description, image, id, price}) {
           {name}
         </Typography>
         <p>${price}</p>
-        <Typography variant="body2" color="text.secondary">
-          <Link to={`/item/${id}`}>
-            {description}
-          </Link>
-        </Typography>
+        <NavLink to={`/item/${id}`} activeClassName="currentCategory" className='text-white'>
+          {description}
+        </NavLink>
        {/*  <ItemCount stock={stock} initial={1} /> */}
       </CardContent>
       <CardActions>
@@ -40,3 +40,4 @@ export default function Item({name, stock, description, image, id, price}) {
     </div>
   );
 }
+

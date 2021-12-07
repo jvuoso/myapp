@@ -10,10 +10,15 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ItemCount from './ItemCount';
-import { Link } from "react-router-dom"
+import { Link, Navigate } from "react-router-dom"
 
+function endPurchase(e) {
+    e.preventDefault();
+    return  <Navigate  to="/cart" />
+  }
 
 const ItemDetail = ({ product }) => {
+ 
     //console.log("id ", id)
     return (
     <div>
@@ -31,15 +36,13 @@ const ItemDetail = ({ product }) => {
           </Typography>
           <p>${product.price}</p>
           <Typography variant="body2" color="text.secondary">
-            <Link to={`/item/${product.id}`}>
               {product.description}
-            </Link>
           </Typography>
           <ItemCount stock={product.stock} initial={1} />
         </CardContent>
         <CardActions>
           <Button size="small">Share</Button>
-        {/*   <Button size="small">Finalizar compra</Button> */}
+          {/* <Button onClick={endPurchase} size="small">Finalizar compra</Button> */}
         <Link to={`/cart`}>
             Finalizar Compra
         </Link>
@@ -49,7 +52,5 @@ const ItemDetail = ({ product }) => {
     );
   }
 
+ 
 export default ItemDetail ; 
-/* 
-<Routes>
-<Route path="item/:id" element={<ItemDetailContainer/>} /> */

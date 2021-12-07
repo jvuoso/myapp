@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
+import { NavLink, Navigate } from "react-router-dom"
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
@@ -15,6 +16,8 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import CartWidget from './cartwidget';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import axios from "axios"
+//import {useState, useEffect} from 'react'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -57,6 +60,27 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar() {
+
+/*   const [products, setProducts] = useState([])
+  const getProductsAxios = async () => {
+      const dataAxios = await axios.get("../JSON/products.json");
+      const dataProducts = dataAxios.data;
+      setProducts(dataProducts)
+}  */
+  //getProductsAxios()
+
+  /* var categories = []
+
+  products.forEach( prd => {
+
+    if (!categories.find( cat => cat === prd.category)) {
+
+      categories.push(prd.category);
+    }
+  }); */
+
+  //console.log(categories)
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -71,6 +95,10 @@ export default function Navbar() {
     setMobileMoreAnchorEl(null);
   };
 
+ /*  const setCategory = (cat) => {
+    
+  }
+ */
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
@@ -119,38 +147,27 @@ export default function Navbar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 10 new items in the cart"
-          color="inherit"
-        >
-          <Badge badgeContent={10} color="error">
-            <CartWidget />
-          </Badge>
-        </IconButton>
-        <p>Cart</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
+      <NavLink to={`/cat/carne`} activeClassName="currentCategory" className='text-white'>
+        <MenuItem onClick={() => ('/cat')}>
+          <p>Carne</p>
+        </MenuItem>
+      </NavLink>
+      <NavLink to={`/cat/pasta`} activeClassName="currentCategory" className='text-white'>
+        <MenuItem>
+          <p>Pasta</p>
+        </MenuItem>
+      </NavLink>
+      <NavLink to={`/cat/pescado`} activeClassName="currentCategory" className='text-white'>
+        <MenuItem>
+          <p>Sushi</p>
+        </MenuItem>
+      </NavLink>
+      <NavLink to={`/cat/pizza`} activeClassName="currentCategory" className='text-white'>
+        <MenuItem>
+        {/* onClick={handleProfileMenuOpen} */}
+          <p>Pizza</p>
+        </MenuItem>
+      </NavLink>
     </Menu>
   );
 
@@ -164,6 +181,7 @@ export default function Navbar() {
             color="inherit"
             aria-label="open drawer"
             sx={{ mr: 2 }}
+            onClick= {handleMobileMenuOpen}
           >
             <MenuIcon />
           </IconButton>
@@ -173,7 +191,7 @@ export default function Navbar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            Bienvenido a la tienda virtual
+            Food market
           </Typography>
           <Search>
             <SearchIconWrapper>

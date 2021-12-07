@@ -14,7 +14,7 @@ const CartWidget = () => {
                 aria-label="show 10 new items in the cart"
                 color="inherit"
                 >
-                <Badge badgeContent="15" color="error">
+                <Badge badgeContent="10" color="error">
                     <ShoppingCartIcon  />
                 </Badge>
                 </IconButton>

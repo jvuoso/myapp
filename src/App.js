@@ -13,9 +13,10 @@ function App() {
         <Navbar/>
         <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center">
         <Routes>
-          <Route path="/" element={<ItemListContainer/>} />
-        <Route path="item/:id" element={<ItemDetailContainer/>} />
-        <Route path="cart" element={<Cart/>} />
+          <Route path="/" element={<ItemListContainer greeting="Productos disponibles para compra"/>} />
+          {/* <Route path="category/:cat" element={<ItemListContainer greeting="Productos de categoria"/>} /> */}
+          <Route path="item/:id" element={<ItemDetailContainer/>} />
+          <Route path="cart" element={<Cart/>} />
       </Routes>
       </Grid>
          
