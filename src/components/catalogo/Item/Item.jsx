@@ -6,7 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 //import ItemCount from '../ItemCount'
-import { Link, NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 //import styled from 'styled-components';
 
 
@@ -27,9 +27,9 @@ export default function Item({name, stock, description, image, id, price}) {
           {name}
         </Typography>
         <p>${price}</p>
-        <NavLink to={`/item/${id}`} activeClassName="currentCategory" className='text-white'>
+        <Link to={`/item/${id}`}>
           {description}
-        </NavLink>
+        </Link>
        {/*  <ItemCount stock={stock} initial={1} /> */}
       </CardContent>
       <CardActions>

@@ -1,7 +1,7 @@
 //import ItemDetailContainer from './ItemDetailContainer'
 //import { Routes, Route } from "react-router-dom";
-import {useState, useEffect} from 'react';
-import Item from "./Item/Item";
+//import {useState, useEffect} from 'react';
+//import Item from "./Item/Item";
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -10,12 +10,12 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ItemCount from './ItemCount';
-import { Link, Navigate } from "react-router-dom"
-
+import { Link } from "react-router-dom"
+/* 
 function endPurchase(e) {
     e.preventDefault();
     return  <Navigate  to="/cart" />
-  }
+  } */
 
 const ItemDetail = ({ product }) => {
  

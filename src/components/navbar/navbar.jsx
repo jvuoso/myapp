@@ -6,17 +6,17 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import Badge from '@mui/material/Badge';
+//import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
-import { NavLink, Navigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
+//import MailIcon from '@mui/icons-material/Mail';
 import CartWidget from './cartwidget';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import axios from "axios"
+//import axios from "axios"
 //import {useState, useEffect} from 'react'
 
 const Search = styled('div')(({ theme }) => ({
@@ -95,10 +95,7 @@ export default function Navbar() {
     setMobileMoreAnchorEl(null);
   };
 
- /*  const setCategory = (cat) => {
-    
-  }
- */
+
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
@@ -147,27 +144,27 @@ export default function Navbar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <NavLink to={`/cat/carne`} activeClassName="currentCategory" className='text-white'>
+      <Link to={`/cat/carne`} className='text-white'>
         <MenuItem onClick={() => ('/cat')}>
           <p>Carne</p>
         </MenuItem>
-      </NavLink>
-      <NavLink to={`/cat/pasta`} activeClassName="currentCategory" className='text-white'>
+      </Link>
+      <Link to={`/cat/pasta`} className='text-white'>
         <MenuItem>
           <p>Pasta</p>
         </MenuItem>
-      </NavLink>
-      <NavLink to={`/cat/pescado`} activeClassName="currentCategory" className='text-white'>
+      </Link>
+      <Link to={`/cat/pescado`} className='text-white'>
         <MenuItem>
-          <p>Sushi</p>
+          <p>Pescado</p>
         </MenuItem>
-      </NavLink>
-      <NavLink to={`/cat/pizza`} activeClassName="currentCategory" className='text-white'>
+      </Link>
+      <Link to={`/cat/pizza`} className='text-white'>
         <MenuItem>
         {/* onClick={handleProfileMenuOpen} */}
           <p>Pizza</p>
         </MenuItem>
-      </NavLink>
+      </Link>
     </Menu>
   );
 
