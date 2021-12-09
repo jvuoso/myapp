@@ -8,6 +8,16 @@ const Cart = () => {
     return(
         <div>
             <h1>Carrito de compras</h1>
+            {cart.map(product => {
+                return(
+                <div key={product.id}>
+                <Item 
+                product = {product.data}
+                isCart={true}
+                />
+                </div>
+                );
+            })}
             <Item product={cart[0].data} isCart={true} ></Item> 
         </div>
 
