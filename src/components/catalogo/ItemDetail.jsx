@@ -11,6 +11,10 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ItemCount from './ItemCount';
 import { Link } from "react-router-dom"
+import {useState} from "react"
+import {useCart} from '../../contexts/CartContext'
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+
 /* 
 function endPurchase(e) {
     e.preventDefault();
@@ -18,7 +22,29 @@ function endPurchase(e) {
   } */
 
 const ItemDetail = ({ product }) => {
- 
+
+    const [itemCountVisible, setItemCountVisible] = useState(true);
+    const [buyButtonVisibility, setBuyButtonVisibility] = useState(true);
+    const [itemsCount, setItemsCount] = useState(0)
+    const [count, setCount] = useState(0)
+    const {cart, setCart} = useCart()
+
+  
+    const onAdd = (count) => {
+      setItemsCount(count);
+      setCount(count);
+      //alert(`Agregados ${count} products`)
+      //setContext({cantidad: count, data: items})
+    }
+
+    const onAddToCart = () => {
+      setItemCountVisible(false)
+      setBuyButtonVisibility(false)
+      setCart([...cart, {quantity: count, data: product}])
+    };
+
+
+
     //console.log("id ", id)
     return (
     <div>
@@ -34,18 +60,21 @@ const ItemDetail = ({ product }) => {
           <Typography gutterBottom variant="h5" component="div">
             {product.name}
           </Typography>
-          <p>${product.price}</p>
+          <b>${product.price}</b>
           <Typography variant="body2" color="text.secondary">
               {product.description}
           </Typography>
-          <ItemCount stock={product.stock} initial={1} />
+          <ItemCount stock={product.stock} initial={1} onAdd={onAdd}/>
         </CardContent>
+         <Button onClick = {onAddToCart}>
+            Agregar al carrito
+            <AddShoppingCartIcon />
+          </Button>
         <CardActions>
-          <Button size="small">Share</Button>
-          {/* <Button onClick={endPurchase} size="small">Finalizar compra</Button> */}
-        <Link to={`/cart`}>
-            Finalizar Compra
-        </Link>
+          {/* <Button size="small">Share</Button> */}
+          {/* <Button onClick={()=> {console.log("comprando")}} size="small">Finalizar compra</Button> */}
+          {/*         */}
+          <Link to={`/cart`}>Finalizar compra</Link>
         </CardActions>
       </Card>
     </div>

@@ -50,10 +50,9 @@ const ItemListContainer = ( {greeting} ) => {
              }}>
                 <Paper elevation = {0}/>
                 <Paper elevation={4}>
-                <Box component="span" sx={{ color: 'primary.main', fontSize: 22 }}>
-                    {greeting} {cat}
-                 </Box>
-                
+                {/* <Box component="span" sx={{ color: 'primary.main', fontSize: 22 }}> */}
+                   <h1>{greeting} {cat}</h1> 
+                 {/* </Box> */}
                     <Box component="span" sx={{ color: 'primary.main', fontSize: 22 }}>
                         <ItemList products = {products2}></ItemList> 
                     </Box>
