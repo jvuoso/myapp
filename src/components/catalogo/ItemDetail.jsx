@@ -15,37 +15,27 @@ import {useState} from "react"
 import {useCart} from '../../contexts/CartContext'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
-/* 
-function endPurchase(e) {
-    e.preventDefault();
-    return  <Navigate  to="/cart" />
-  } */
-
 const ItemDetail = ({ product }) => {
 
-    const [itemCountVisible, setItemCountVisible] = useState(true);
-    const [buyButtonVisibility, setBuyButtonVisibility] = useState(true);
-    const [itemsCount, setItemsCount] = useState(0)
+    //const [itemCountVisible, setItemCountVisible] = useState(true);
+    //const [buyButtonVisibility, setBuyButtonVisibility] = useState(true);
+    //const [itemsCount, setItemsCount] = useState(0)
     const [count, setCount] = useState(0)
     const {cart, setCart} = useCart()
 
   
     const onAdd = (count) => {
-      setItemsCount(count);
+      //setItemsCount(count);
       setCount(count);
-      //alert(`Agregados ${count} products`)
-      //setContext({cantidad: count, data: items})
     }
 
     const onAddToCart = () => {
-      setItemCountVisible(false)
-      setBuyButtonVisibility(false)
+      //setItemCountVisible(false)
+      //setBuyButtonVisibility(false)
       setCart([...cart, {quantity: count, data: product}])
     };
 
 
-
-    //console.log("id ", id)
     return (
     <div>
         <h3>hola soy {product.name}</h3>
@@ -66,14 +56,11 @@ const ItemDetail = ({ product }) => {
           </Typography>
           <ItemCount stock={product.stock} initial={1} onAdd={onAdd}/>
         </CardContent>
-         <Button onClick = {onAddToCart}>
+{/*           <Button onClick = {onAddToCart}>
             Agregar al carrito
             <AddShoppingCartIcon />
-          </Button>
+          </Button> */}
         <CardActions>
-          {/* <Button size="small">Share</Button> */}
-          {/* <Button onClick={()=> {console.log("comprando")}} size="small">Finalizar compra</Button> */}
-          {/*         */}
           <Link to={`/cart`}>Finalizar compra</Link>
         </CardActions>
       </Card>

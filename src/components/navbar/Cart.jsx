@@ -4,7 +4,7 @@ import Item from '../catalogo/Item/Item'
 
 const Cart = () => {
    const {cart} = useCart();
-   console.log("hola", cart[0].data)
+   //console.log("hola", cart[0].data)
     return(
         <div>
             <h1>Carrito de compras</h1>
@@ -18,7 +18,7 @@ const Cart = () => {
                 </div>
                 );
             })}
-            <Item product={cart[0].data} isCart={true} ></Item> 
+           {/*  <Item product={cart[0].data} isCart={true} ></Item>  */}
         </div>
 
     );

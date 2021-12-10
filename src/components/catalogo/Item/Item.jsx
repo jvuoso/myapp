@@ -10,7 +10,7 @@ import { Link } from "react-router-dom"
 //import styled from 'styled-components';
 
 
-export default function Item({product, isCart}) {
+export default function Item({product, isCart, quantity, totalPrice}) {
   
    return (
     <div>
@@ -25,14 +25,12 @@ export default function Item({product, isCart}) {
         <Typography gutterBottom variant="h5" component="div">
           {product.name}
         </Typography>
-        <p>${product.price}</p>
-        <Link to={`/item/${product.id}`}>
-          More information
-        </Link>
+        {!isCart && (<h3><b>${product.price}</b></h3>)}
+        {!isCart &&(<Link to={`/item/${product.id}`}>More information</Link>)}
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+      {!isCart &&(<Button size="small">Share</Button>)}
+      {!isCart &&(<Button size="small">Learn More</Button>)}
       </CardActions>
     </Card>
     </div>

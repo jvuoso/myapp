@@ -6,10 +6,13 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 //import Paper from '@mui/material/Paper';
+import {useCart} from '../../contexts/CartContext' 
 
 const ItemCount = ({ stock, initial, onAdd }) => {
 
     const [count, setCount] = useState(parseInt(initial))
+
+    const {addProd} = useCart();
 
     function addItem() {
         if ((count + 1) <= stock) {
@@ -23,7 +26,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         }
     }
 
-    useEffect( () => {onAdd(count)}, [count])
+    //useEffect( () => {onAdd(count)}, [count])
 
     return (
         <Box

@@ -3,13 +3,6 @@ import { createContext, useState, useContext } from "react"
 export const CartContext = createContext();
 export const useCart = () => useContext(CartContext)
 
-/* export class Cart  {
-    constructor(){
-        this.list = [];
-        this.totalPrice = 0;
-    }
-}
- */
 export const CartProvider = ({children}) => {
 
     const [cart, setCart] = useState([])
@@ -17,6 +10,7 @@ export const CartProvider = ({children}) => {
     
     const addItem = (item) => {
         //function
+        console.log("here i am")
     }
 
     const isInCart = (item) => {
