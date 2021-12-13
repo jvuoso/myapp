@@ -19,7 +19,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 //import axios from "axios"
 //import {useState, useEffect} from 'react'
 import {useCart} from '../../contexts/CartContext'
-import {useState, useEffect} from "react"
+//import {useState, useEffect} from "react"
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -64,11 +64,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function Navbar() {
 
   const {cart} = useCart();
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = React.useState([cart])
 
-  useEffect(() => {
+  React.useEffect(() => {
     setProducts(cart);
-  }, [cart]);
+    console.log("soy el useEffect")
+  }, [cart]); 
+
+/*   useEffect(() => {
+    setTimeout(() => setProducts(cart), 1000);
+}, []); */
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -222,8 +227,3 @@ export default function Navbar() {
     </Box>
   );
 }
-
-//export default Navbar;
-
-//import react component
-//cc create component
