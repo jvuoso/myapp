@@ -18,6 +18,8 @@ import CartWidget from './cartwidget';
 import MoreIcon from '@mui/icons-material/MoreVert';
 //import axios from "axios"
 //import {useState, useEffect} from 'react'
+import {useCart} from '../../contexts/CartContext'
+import {useState, useEffect} from "react"
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -61,25 +63,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function Navbar() {
 
-/*   const [products, setProducts] = useState([])
-  const getProductsAxios = async () => {
-      const dataAxios = await axios.get("../JSON/products.json");
-      const dataProducts = dataAxios.data;
-      setProducts(dataProducts)
-}  */
-  //getProductsAxios()
+  const {cart} = useCart();
+  const [products, setProducts] = useState([])
 
-  /* var categories = []
-
-  products.forEach( prd => {
-
-    if (!categories.find( cat => cat === prd.category)) {
-
-      categories.push(prd.category);
-    }
-  }); */
-
-  //console.log(categories)
+  useEffect(() => {
+    setProducts(cart);
+  }, [cart]);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -201,7 +190,7 @@ export default function Navbar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <CartWidget />
+            <CartWidget products={products}/>
             <IconButton
               size="large"
               edge="end"

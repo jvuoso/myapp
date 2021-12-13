@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import Button from '@mui/material/Button';
@@ -7,12 +7,20 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 //import Paper from '@mui/material/Paper';
 import {useCart} from '../../contexts/CartContext' 
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({ stock, initial, product }) => {
 
     const [count, setCount] = useState(parseInt(initial))
 
-    const {addProd} = useCart();
+    const { addProd } = useCart();
+    //const { cart } = useCart();
+
+    const onAdd = () => {
+      //console.log("Cart antes de agregar: ",cart)
+      addProd(product,count)
+      //console.log("Cart despues de agregar: ",cart)
+    }
 
     function addItem() {
         if ((count + 1) <= stock) {
@@ -67,10 +75,10 @@ const ItemCount = ({ stock, initial, onAdd }) => {
           mx: 0.5,
         },
       }}>
-{/*           <Button onClick = {onAdd}>
+          <Button onClick = {onAdd}>
             Agregar al carrito
           <AddShoppingCartIcon />
-          </Button> */}
+          </Button>
       </Box>
       </Box>
       

@@ -8,9 +8,11 @@ import Typography from '@mui/material/Typography';
 //import ItemCount from '../ItemCount'
 import { Link } from "react-router-dom"
 //import styled from 'styled-components';
+import deleteElement from '../../navbar/Cart'
 
 
 export default function Item({product, isCart, quantity, totalPrice}) {
+ 
   
    return (
     <div>
@@ -26,6 +28,9 @@ export default function Item({product, isCart, quantity, totalPrice}) {
           {product.name}
         </Typography>
         {!isCart && (<h3><b>${product.price}</b></h3>)}
+        {isCart && (<h3><b>${totalPrice}</b></h3>)}
+        {isCart && (<h3><b>Cantidad: {quantity}</b></h3>)}
+  {/*       {isCart && (<Button onClick = {deleteElement}>Quitar</Button>)} */}
         {!isCart &&(<Link to={`/item/${product.id}`}>More information</Link>)}
       </CardContent>
       <CardActions>

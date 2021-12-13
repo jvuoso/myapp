@@ -6,6 +6,7 @@ import Box from '@mui/material/Box'
 import axios from "axios"
 import { useParams } from "react-router-dom"
 
+export var dataAxios = []
 
 const ItemListContainer = ( {greeting} ) => {
 
