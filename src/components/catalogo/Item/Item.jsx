@@ -38,11 +38,11 @@ export default function Item({product, isCart, quantity, totalPrice}) {
         {isCart && (<h3><b>${totalPrice}</b></h3>)}
         {isCart && (<h3><b>Cantidad: {quantity}</b></h3>)}
         {isCart && (<Button onClick = { onDelete }>Quitar</Button>)}
-        {!isCart &&(<Link to={`/item/${product.id}`}>More information</Link>)}
+        {!isCart &&(<Button component={Link} to={`/item/${product.id}`}> More information</Button>)}  
       </CardContent>
       <CardActions>
-      {!isCart &&(<Button size="small">Share</Button>)}
-      {!isCart &&(<Button size="small">Learn More</Button>)}
+      {Boolean(0) &&(<Button size="small">Share</Button>)}
+      {Boolean(0) &&(<Button size="small">Learn More</Button>)}
       </CardActions>
     </Card>
     </div>

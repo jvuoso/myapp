@@ -5,6 +5,7 @@ import Item from '../catalogo/Item/Item'
 //import {useState} from 'react'
 import { Link } from "react-router-dom"
 //import {set} from '../../contexts/CartContext'
+import Button from '@mui/material/Button';
 
 
 const Cart = () => {
@@ -31,7 +32,7 @@ const Cart = () => {
                 );
             })}
             {!Boolean(fixedCart.length) && (<h3>UPS! Tu carrito se encuentra vacio.</h3>)}
-            {!Boolean(fixedCart.length) && (<Link to={`/`}>Home</Link>)}
+            {!Boolean(fixedCart.length) && (<Button component={Link} to="/" > Home</Button>)}
             {Boolean(fixedCart.length) && (<h2><b>Precio total: ${totalPrice(cartSum)}</b></h2>)}
            
         </div>

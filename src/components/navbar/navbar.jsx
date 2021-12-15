@@ -2,6 +2,7 @@ import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
@@ -133,27 +134,19 @@ export default function Navbar({product}) {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <Link to={`/cat/carne`} className='text-white'>
-        <MenuItem onClick={() => ('/cat')}>
-          <p>Carne</p>
-        </MenuItem>
-      </Link>
-      <Link to={`/cat/pasta`} className='text-white'>
-        <MenuItem>
-          <p>Pasta</p>
-        </MenuItem>
-      </Link>
-      <Link to={`/cat/pescado`} className='text-white'>
-        <MenuItem>
-          <p>Pescado</p>
-        </MenuItem>
-      </Link>
-      <Link to={`/cat/pizza`} className='text-white'>
-        <MenuItem>
-        {/* onClick={handleProfileMenuOpen} */}
-          <p>Pizza</p>
-        </MenuItem>
-      </Link>
+      <MenuItem>
+        <Button component={Link} to={"/cat/carne"} ><p>Carne</p></Button>
+      </MenuItem>
+      <MenuItem>
+        <Button component={Link} to={"/cat/pasta"}><p>Pasta</p></Button>
+      </MenuItem>
+      <MenuItem>
+        <Button component={Link} to={"/cat/pescado"} ><p>Pescado</p></Button>
+      </MenuItem>
+      <MenuItem>
+        <Button component={Link} to={"/cat/pizza"} ><p>Pizza</p></Button>
+      </MenuItem>
+      
     </Menu>
   );
 

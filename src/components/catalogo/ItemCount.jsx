@@ -57,12 +57,12 @@ const ItemCount = ({ stock, initial, product }) => {
             mx: 0.5,
           },
         }}
-      > 
-          <RemoveIcon onClick = {quitItem}/>
-          <Divider orientation="vertical" variant="middle" flexItem />
-          <h3>{count}</h3>
-          <Divider orientation="vertical" variant="middle" flexItem />
-          <AddIcon onClick = {addItem}/>
+      >           
+          {!ready  && (<RemoveIcon onClick = {quitItem}/>)}
+          {!ready  && (<Divider orientation="vertical" variant="middle" flexItem />)}
+          {!ready  && (<h3>{count}</h3>)}
+          {!ready  && (<Divider orientation="vertical" variant="middle" flexItem />)}
+          {!ready  && (<AddIcon onClick = {addItem}/>)}
           <Box
       sx={{
         display: 'flex',
@@ -79,8 +79,11 @@ const ItemCount = ({ stock, initial, product }) => {
           mx: 0.5,
         },
       }}>
-        {!ready  &&(<Button onClick = {onAdd}>Agregar al carrito <AddShoppingCartIcon /></Button>)}
-        {ready && (<Link to={`/cart`}>Finalizar compra</Link>)}
+          {ready && (<Button component={Link} to="/cart" > Finalizar compra</Button>)}
+          {ready  && (<Divider orientation="vertical" variant="middle" flexItem />)}
+          {ready && (<Button component={Link} to="/" > Seguir comprando</Button>)}
+          {!ready  &&(<Button onClick = {onAdd}>Agregar al carrito <AddShoppingCartIcon /></Button>)}
+
       </Box>
       </Box>
       
