@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react'
 import ItemList from './ItemList'
 import Paper from '@mui/material/Paper'
 import Box from '@mui/material/Box'
+import Grid from '@mui/material/Grid'
 import axios from "axios"
 import { useParams } from "react-router-dom"
 import { useCart } from '../../contexts/CartContext'
@@ -44,6 +45,10 @@ const ItemListContainer = ( {greeting} ) => {
     }
 
         return (
+            
+
+
+            
             <Box
                 sx={{
                     display: 'flex',
@@ -53,17 +58,20 @@ const ItemListContainer = ( {greeting} ) => {
                     width: 345,
                     height: 345,
                     },
-             }}>
-                <Paper elevation = {0}/>
-                <Paper elevation={4}>
-                {/* <Box component="span" sx={{ color: 'primary.main', fontSize: 22 }}> */}
-                   <h1>{greeting} {cat}</h1> 
-                 {/* </Box> */}
-                    <Box component="span" sx={{ color: 'primary.main', fontSize: 22 }}>
+                 }}>
+               {/*  <Paper elevation = {0}/>
+                <Paper elevation={4}> */}
+                   
+                     <Grid container spacing={6}> 
+                     
+                   {/*  <Box component="span" sx={{ color: 'primary.main', fontSize: 20 }}> */}
+                        <h1>{greeting} {cat}</h1>
                         <ItemList products = {products2}></ItemList> 
-                    </Box>
-                </Paper> 
+                    {/* </Box> */}
+                    </Grid>
+                {/* </Paper>  */}
             </Box>
+            
         );
 }
  
