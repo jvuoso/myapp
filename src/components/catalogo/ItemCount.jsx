@@ -8,12 +8,16 @@ import Divider from '@mui/material/Divider';
 //import Paper from '@mui/material/Paper';
 import {useCart} from '../../contexts/CartContext' 
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { Link } from "react-router-dom"
 
 const ItemCount = ({ stock, initial, product }) => {
 
     const [count, setCount] = useState(parseInt(initial))
 
     const { addProd } = useCart();
+    const { ready } = useCart();
+
+    //console.log('ready en itemCount es', ready);
     //const { cart } = useCart();
 
     const onAdd = () => {
@@ -75,32 +79,12 @@ const ItemCount = ({ stock, initial, product }) => {
           mx: 0.5,
         },
       }}>
-          <Button onClick = {onAdd}>
-            Agregar al carrito
-          <AddShoppingCartIcon />
-          </Button>
+        {!ready  &&(<Button onClick = {onAdd}>Agregar al carrito <AddShoppingCartIcon /></Button>)}
+        {ready && (<Link to={`/cart`}>Finalizar compra</Link>)}
       </Box>
       </Box>
       
-    );
-        
-
-/*return (
-         <div>
-            <Stack spacing={2} direction="column">
-                <div>
-                    <Button variant="outlined" onClick={addItem}>+</Button>
-                    <h2>{ count }</h2>
-                    <Button variant="outlined" onClick={quitItem}>-</Button>
-                </div>
-                <div>
-                    <Button variant="contained" onClick={onAdd}>Agregar al carrito</Button>
-                </div>
-            </Stack>
-        </div>
-        );
-         */
-    
+    );   
 
 }
 

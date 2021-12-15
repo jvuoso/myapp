@@ -1,16 +1,19 @@
 //import {useState, useEffect} from 'react'
-import {useCart} from '../../contexts/CartContext'
+import { useCart } from '../../contexts/CartContext'
 import Item from '../catalogo/Item/Item'
 //import axios from "axios"
 //import {useState} from 'react'
 import { Link } from "react-router-dom"
+//import {set} from '../../contexts/CartContext'
 
 
 const Cart = () => {
    const {cart} = useCart();
+   //const {setReady} = useCart();
    const fixedCart = fixCart(cart)
    const cartSum = doCartSum(fixedCart, cart)
-  
+
+   //setReady(false);
 
     return( 
         <div>
@@ -27,7 +30,7 @@ const Cart = () => {
                 </div>
                 );
             })}
-            {!Boolean(fixedCart.length) && (<h3>UPS! El carrito se encuentra vacio.</h3>)}
+            {!Boolean(fixedCart.length) && (<h3>UPS! Tu carrito se encuentra vacio.</h3>)}
             {!Boolean(fixedCart.length) && (<Link to={`/`}>Home</Link>)}
             {Boolean(fixedCart.length) && (<h2><b>Precio total: ${totalPrice(cartSum)}</b></h2>)}
            
@@ -67,11 +70,6 @@ const totalPrice = (cartSum) => {
         totalPrice += product.totalPrice
     }
     return totalPrice
-}
-
-export const deleteElement = (e) => {
-    e.preventDefault()
-    console.log("borrando")
 }
 
 export default Cart

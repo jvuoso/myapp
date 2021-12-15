@@ -61,19 +61,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Navbar() {
+export default function Navbar({product}) {
 
   const {cart} = useCart();
   const [products, setProducts] = React.useState([cart])
 
   React.useEffect(() => {
     setProducts(cart);
-    console.log("soy el useEffect")
+    //console.log("soy el useEffect")
   }, [cart]); 
-
-/*   useEffect(() => {
-    setTimeout(() => setProducts(cart), 1000);
-}, []); */
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -88,7 +84,6 @@ export default function Navbar() {
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
-
 
   const handleMenuClose = () => {
     setAnchorEl(null);

@@ -5,6 +5,7 @@ import Paper from '@mui/material/Paper'
 import Box from '@mui/material/Box'
 import axios from "axios"
 import { useParams } from "react-router-dom"
+import { useCart } from '../../contexts/CartContext'
 
 export var dataAxios = []
 
@@ -13,6 +14,9 @@ const ItemListContainer = ( {greeting} ) => {
     const [products, setProducts] = useState([])
     const {cat} = useParams()
     const products2 = []
+    const {setReady} = useCart();
+
+    
 
         const getProductsAxios = async () => {
             const dataAxios = await axios.get("../JSON/products.json");
@@ -21,6 +25,7 @@ const ItemListContainer = ( {greeting} ) => {
     } 
 
      useEffect(() => {
+        setReady(false)
         setTimeout(() => getProductsAxios(), 1000);
     }, []);
 

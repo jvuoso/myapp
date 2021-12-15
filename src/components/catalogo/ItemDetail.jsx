@@ -10,7 +10,7 @@ import CardMedia from '@mui/material/CardMedia';
 //import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ItemCount from './ItemCount';
-import { Link } from "react-router-dom"
+//import { Link } from "react-router-dom"
 import {useState} from "react"
 import {useCart} from '../../contexts/CartContext'
 /* import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'; */
@@ -22,6 +22,7 @@ const ItemDetail = ({ product }) => {
     //const [itemsCount, setItemsCount] = useState(0)
     const [count, setCount] = useState(0)
     const {cart, setCart} = useCart()
+    const {setReady} = useCart();
 
   
     const onAdd = (count) => {
@@ -62,7 +63,7 @@ const ItemDetail = ({ product }) => {
             <AddShoppingCartIcon />
           </Button> */}
         <CardActions>
-          <Link to={`/cart`}>Finalizar compra</Link>
+          {/* <Link to={`/cart`}>Finalizar compra</Link> */}
         </CardActions>
       </Card>
     </div>
