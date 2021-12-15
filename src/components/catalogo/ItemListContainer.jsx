@@ -17,8 +17,6 @@ const ItemListContainer = ( {greeting} ) => {
     const products2 = []
     const {setReady} = useCart();
 
-    
-
         const getProductsAxios = async () => {
             const dataAxios = await axios.get("../JSON/products.json");
             const dataProducts = dataAxios.data;
@@ -45,28 +43,29 @@ const ItemListContainer = ( {greeting} ) => {
     }
 
         return (
-            
-
-
-            
-            <Box
+ 
+            <Box component="span"
                 sx={{
                     display: 'flex',
                     flexWrap: 'wrap',
                     '& > :not(style)': {
                     m: 1,
-                    width: 345,
-                    height: 345,
+                    height: "100%",
+                    width: "100%"
                     },
                  }}>
                {/*  <Paper elevation = {0}/>
                 <Paper elevation={4}> */}
                    
-                     <Grid container spacing={6}> 
+                     <Grid container spacing={3} direction="column" justifyContent="space-between" alignItems="center"> 
                      
                    {/*  <Box component="span" sx={{ color: 'primary.main', fontSize: 20 }}> */}
+                   <Grid item xs>
                         <h1>{greeting} {cat}</h1>
+                    </Grid>
+                    <Grid item xs>
                         <ItemList products = {products2}></ItemList> 
+                    </Grid>
                     {/* </Box> */}
                     </Grid>
                 {/* </Paper>  */}
