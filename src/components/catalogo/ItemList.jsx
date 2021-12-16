@@ -5,11 +5,11 @@ import Box from '@mui/material/Box'
 const ItemList = ({ products }) =>{
     //console.log("products: ", products) 
     return (
-        <Box sx={{ width: '100%' }}>
-            <Grid container rowSpacing={10} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Box sx={{ width: '100%', height: '100%'}}>
+            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
             {products.map(product => {
                 return(
-                <Grid item key={product.id} xs={6}>
+              <Grid item key={product.id} xs={2} sm={4} md={3}> 
                 <Item 
                 product = {product}
                 />

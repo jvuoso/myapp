@@ -44,26 +44,18 @@ const ItemListContainer = ( {greeting} ) => {
 
         return (
  
-            <Box component="span"
-                sx={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    '& > :not(style)': {
-                    m: 1,
-                    height: "100%",
-                    width: "100%"
-                    },
-                 }}>
+
+                    <Box sx={{ width: '100%', height: '100%'}}>
                {/*  <Paper elevation = {0}/>
                 <Paper elevation={4}> */}
                    
-                     <Grid container spacing={3} direction="column" justifyContent="space-between" alignItems="center"> 
+                    <Grid container spacing={5} direction="column" justifyContent="space-between" alignItems="center"> 
                      
                    {/*  <Box component="span" sx={{ color: 'primary.main', fontSize: 20 }}> */}
-                   <Grid item xs>
+                   <Grid item xs={6}>
                         <h1>{greeting} {cat}</h1>
                     </Grid>
-                    <Grid item xs>
+                    <Grid item xs={6} md={4}>
                         <ItemList products = {products2}></ItemList> 
                     </Grid>
                     {/* </Box> */}

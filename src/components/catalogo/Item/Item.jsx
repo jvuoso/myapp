@@ -10,7 +10,7 @@ import { Link } from "react-router-dom"
 //import styled from 'styled-components';
 import { useCart } from '../../../contexts/CartContext'
 //import Box from '@mui/material/Box';
-import Divider from '@mui/material/Divider';
+//import Divider from '@mui/material/Divider';
 
 
 export default function Item({product, isCart, quantity, totalPrice}) {
@@ -23,10 +23,10 @@ export default function Item({product, isCart, quantity, totalPrice}) {
   
    return (
     <div>
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 350 }}>
       <CardMedia
         component="img"
-        height="140"
+        height="300"
         image= {product.image}
         alt= {product.name}
       />

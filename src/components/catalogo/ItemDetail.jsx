@@ -39,11 +39,11 @@ const ItemDetail = ({ product }) => {
 
     return (
     <div>
-        <h3>hola soy {product.name}</h3>
-      <Card sx={{ maxWidth: 345 }}>
+        <h1></h1>
+      <Card sx={{ maxWidth: 350 }}>
         <CardMedia
           component="img"
-          height="140"
+          height="250"
           image= {product.image}
           alt= {product.name}
         />

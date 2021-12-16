@@ -9,11 +9,11 @@
         "category": "pescado"
     },
     { 
-        "name": "Asado",
+        "name": "Asado de tira",
         "description": "El asado, barbacoa, parrilla o parrillada es una técnica de cocción mediante la cual, los alimentos (generalmente cortes de carne) son expuestos al calor de fuego o brasas para que se cocinen lentamente.",
         "id": "2",
-        "stock": "5",
-        "image": "https://th.bing.com/th/id/R.3113e91ae80790d0b1f30ba4c7e2ba9b?rik=fPc2u%2fMfPVd75A&riu=http%3a%2f%2fflavorverse.com%2fwp-content%2fuploads%2f2017%2f11%2fAsado-Argentino-Barbecued-Traditional-Argentine-Food.jpg&ehk=TDQe7OGsBtBbNyeejfrRA5X8alXpdMcnbwkpjSXbIUY%3d&risl=&pid=ImgRaw&r=0",
+        "stock": "7",
+        "image": "https://i.pinimg.com/564x/d1/6b/40/d16b404e30faa3408f8adadbcb537c0e.jpg",
         "price": "1200",
         "category": "carne"
     },
@@ -27,10 +27,91 @@
         "category": "pasta"
     },
     { 
-        "name": "Pizza",
+        "name": "Pizza a la Napolitana",
         "description": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal que tradicionalmente se cubre con salsa de tomate y queso y se hornea a alta temperatura en un horno de leña.",
         "id": "4",
-        "stock": "3",
+        "stock": "10",
+        "image": "https://www.johaprato.com/files/styles/flexslider_full/public/pizza-napolitana.jpg?itok=N0LPyO1C",
+        "price": "950",
+        "category": "pizza"
+    },
+    { 
+        "name": "Pizza a la Calabresa",
+        "description": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal que tradicionalmente se cubre con salsa de tomate y queso y se hornea a alta temperatura en un horno de leña.",
+        "id": "5",
+        "stock": "10",
+        "image": "https://th.bing.com/th/id/R.9348dfa939697eacc7d74320ca7f02ad?rik=rHJXXAAs3Qy4pg&pid=ImgRaw&r=0",
+        "price": "1000",
+        "category": "pizza"
+    },
+    { 
+        "name": "Pizza de Mozzarella",
+        "description": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal que tradicionalmente se cubre con salsa de tomate y queso y se hornea a alta temperatura en un horno de leña.",
+        "id": "6",
+        "stock": "10",
+        "image": "https://locosxlaparrilla.com/wp-content/uploads/2015/02/Receta-recetas-locos-x-la-parrilla-locosxlaparrilla-receta-pizza-pizza-receta-pizza-mozzarella-pizza-mozzarella.jpg",
+        "price": "700",
+        "category": "pizza"
+    },
+    { 
+        "name": "Vacío a la parrilla",
+        "description": "El vacío de res es un corte que proviene de la parte lateral de la res. Se extrae de entre las costillas y los huecos de la cadera y por lo general es una carne jugosa, aunque puede ser de suavidad intermedia, ya que es un poco más fibrosa que otro tipo de corte.",
+        "id": "7",
+        "stock": "5",
+        "image": "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_1238/https://hacerasado.com.ar/wp-content/uploads/2020/05/vacio-asado.jpg",
+        "price": "1300",
+        "category": "carne"
+    },
+    { 
+        "name": "Entraña a la parrilla",
+        "description": "La entraña de ternera es una pieza procedente de la parte interna de los costillares de nuestras terneras, para entendernos mejor, sería el músculo del diafragma, por lo que de cada ternera podrán sacarse como mucho dos piezas de esta fabulosa carne, y con una relación calidad precio excepcional.",
+        "id": "8",
+        "stock": "2",
+        "image": "https://habemusasado.com/wp-content/uploads/2021/06/en.jpg",
+        "price": "800",
+        "category": "carne"
+    },
+    { 
+        "name": "Pizza",
+        "description": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal que tradicionalmente se cubre con salsa de tomate y queso y se hornea a alta temperatura en un horno de leña.",
+        "id": "9",
+        "stock": "10",
+        "image": "https://th.bing.com/th/id/R.9348dfa939697eacc7d74320ca7f02ad?rik=rHJXXAAs3Qy4pg&pid=ImgRaw&r=0",
+        "price": "800",
+        "category": "pizza"
+    },
+    { 
+        "name": "Pizza",
+        "description": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal que tradicionalmente se cubre con salsa de tomate y queso y se hornea a alta temperatura en un horno de leña.",
+        "id": "10",
+        "stock": "10",
+        "image": "https://th.bing.com/th/id/R.9348dfa939697eacc7d74320ca7f02ad?rik=rHJXXAAs3Qy4pg&pid=ImgRaw&r=0",
+        "price": "800",
+        "category": "pizza"
+    },
+    { 
+        "name": "Pizza",
+        "description": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal que tradicionalmente se cubre con salsa de tomate y queso y se hornea a alta temperatura en un horno de leña.",
+        "id": "11",
+        "stock": "10",
+        "image": "https://th.bing.com/th/id/R.9348dfa939697eacc7d74320ca7f02ad?rik=rHJXXAAs3Qy4pg&pid=ImgRaw&r=0",
+        "price": "800",
+        "category": "pizza"
+    },
+    { 
+        "name": "Pizza",
+        "description": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal que tradicionalmente se cubre con salsa de tomate y queso y se hornea a alta temperatura en un horno de leña.",
+        "id": "12",
+        "stock": "10",
+        "image": "https://th.bing.com/th/id/R.9348dfa939697eacc7d74320ca7f02ad?rik=rHJXXAAs3Qy4pg&pid=ImgRaw&r=0",
+        "price": "800",
+        "category": "pizza"
+    },
+    { 
+        "name": "Pizza",
+        "description": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal que tradicionalmente se cubre con salsa de tomate y queso y se hornea a alta temperatura en un horno de leña.",
+        "id": "13",
+        "stock": "10",
         "image": "https://th.bing.com/th/id/R.9348dfa939697eacc7d74320ca7f02ad?rik=rHJXXAAs3Qy4pg&pid=ImgRaw&r=0",
         "price": "800",
         "category": "pizza"
