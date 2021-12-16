@@ -72,22 +72,22 @@
         "category": "carne"
     },
     { 
-        "name": "Pizza",
-        "description": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal que tradicionalmente se cubre con salsa de tomate y queso y se hornea a alta temperatura en un horno de leña.",
+        "name": "Sopa de calabaza",
+        "description": "La sopa de calabaza es una especie de puré elaborado con calabaza. Este tipo de sopa se elabora de diferentes formas a lo largo de las diversas cocinas del mundo,​ sirviéndose tanto fría como caliente.",
         "id": "9",
-        "stock": "10",
-        "image": "https://th.bing.com/th/id/R.9348dfa939697eacc7d74320ca7f02ad?rik=rHJXXAAs3Qy4pg&pid=ImgRaw&r=0",
+        "stock": "30",
+        "image": "https://th.bing.com/th/id/R.d00a73603a8ba5f3fccffd1cdccf3310?rik=LCVBRiUKFYpEjg&riu=http%3a%2f%2fwww.hanimelibartin.com%2ffiles%2fapp%2f2019-10%2fkereviz_tarhanajpg_dvGRx.jpg&ehk=jDbQfzO7NQ9wkImjvRpmgV5RGsIc57TOJRw7rZZGLKU%3d&risl=&pid=ImgRaw&r=0",
         "price": "800",
-        "category": "pizza"
+        "category": "sopa"
     },
     { 
-        "name": "Pizza",
-        "description": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal que tradicionalmente se cubre con salsa de tomate y queso y se hornea a alta temperatura en un horno de leña.",
+        "name": "Sopa de pollo y verduras",
+        "description": "El caldo de pollo (denominado a veces como sopa de pollo o caldo de gallina) es una sopa.1​ A menudo se sirve con trozos de carne o con granos de arroz o cebada, pasta, zanahoria, papa amarilla, apio, cebolla blanca, etc.2​ Se considera también un remedio casero contra los enfriamientos y los catarros y la rinitis.",
         "id": "10",
-        "stock": "10",
-        "image": "https://th.bing.com/th/id/R.9348dfa939697eacc7d74320ca7f02ad?rik=rHJXXAAs3Qy4pg&pid=ImgRaw&r=0",
+        "stock": "6",
+        "image": "https://elgourmet.s3.amazonaws.com/recetas/cover/sopa-_RQSB40hj87DfHLq5uEMtZFVo63g2CA.png",
         "price": "800",
-        "category": "pizza"
+        "category": "sopa"
     },
     { 
         "name": "Pizza",

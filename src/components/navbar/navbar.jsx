@@ -146,6 +146,9 @@ export default function Navbar({product}) {
       <MenuItem>
         <Button component={Link} to={"/cat/pizza"} ><p>Pizza</p></Button>
       </MenuItem>
+      <MenuItem>
+        <Button component={Link} to={"/cat/sopa"} ><p>Sopa</p></Button>
+      </MenuItem>
       
     </Menu>
   );
@@ -164,14 +167,16 @@ export default function Navbar({product}) {
           >
             <MenuIcon />
           </IconButton>
+          
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
-          >
-            Food market
-          </Typography>
+            sx={{ display: { xs: 'none', sm: 'block' } }}>
+            <Button component={Link} to={"/"} size='large' color='inherit' >
+              <b> Food market </b>
+            </Button>
+               </Typography>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />

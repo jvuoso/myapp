@@ -49,7 +49,7 @@ const ItemListContainer = ( {greeting} ) => {
                {/*  <Paper elevation = {0}/>
                 <Paper elevation={4}> */}
                    
-                    <Grid container spacing={5} direction="column" justifyContent="space-between" alignItems="center"> 
+                    <Grid container spacing={6} direction="column" justifyContent="space-between" alignItems="center"> 
                      
                    {/*  <Box component="span" sx={{ color: 'primary.main', fontSize: 20 }}> */}
                    <Grid item xs={6}>
