@@ -7,9 +7,9 @@ var array = []
 
 export const CartProvider = ({children}) => {
 
-    const [item, setSelectedItem] = useState(null);
-    const [id, setSelectedItemId] = useState(null);
-    const [ishere, setIsHere] = useState(Boolean);
+    const [item] = useState(null);
+    const [id] = useState(null);
+    const [ishere] = useState(Boolean);
     const [cart, setCart] = useState([])
     const [ready, setReady] = useState(Boolean)
     //const value = {cart, setCart}
@@ -21,7 +21,7 @@ export const CartProvider = ({children}) => {
         for (1; counter < quantity; counter++) {
             array.push(item)
         }
-        const message = `Agregaste ${quantity} ${item.name} `;
+        //const message = `Agregaste ${quantity} ${item.name} `;
         
         //(quantity===1) ? alert(message) : alert(`${message}s`)
 
@@ -35,11 +35,10 @@ export const CartProvider = ({children}) => {
     function delProd (item, quantity){
 
         //console.log("borrando ese item:", item);
-        for (let i=0 ;i<quantity; i++){
-            array.pop(item)
-        } 
+
+        array = array.filter(f => f !== item)
         
-        console.log("array after delete: ",array)
+        //console.log("El cart quedaria asi: ",array)
         setCart([...array])
     }
     

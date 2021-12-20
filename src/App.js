@@ -7,6 +7,8 @@ import ItemDetailContainer from './components/catalogo/ItemDetailContainer';
 import Grid from '@mui/material/Grid'
 //import { useState, createContext } from "react"
 import {CartProvider} from "./contexts/CartContext"
+//import {useState, useEffect} from 'react'
+//import {doc, getDoc,getFirestore, collection, getDocs} from "firebase/firestore"
 
 function App() {
 

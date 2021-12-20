@@ -11,8 +11,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import ItemCount from './ItemCount';
 //import { Link } from "react-router-dom"
-import {useState} from "react"
-import {useCart} from '../../contexts/CartContext'
+//import {useState} from "react"
+//import {useCart} from '../../contexts/CartContext'
 /* import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'; */
 
 const ItemDetail = ({ product }) => {
@@ -20,21 +20,21 @@ const ItemDetail = ({ product }) => {
     //const [itemCountVisible, setItemCountVisible] = useState(true);
     //const [buyButtonVisibility, setBuyButtonVisibility] = useState(true);
     //const [itemsCount, setItemsCount] = useState(0)
-    const [count, setCount] = useState(0)
-    const {cart, setCart} = useCart()
-    const {setReady} = useCart();
+    //const [count, setCount] = useState(0)
+    //const {cart, setCart} = useCart()
+    //const {setReady} = useCart();
 
   
-    const onAdd = (count) => {
+    /* const onAdd = (count) => {
       //setItemsCount(count);
       setCount(count);
-    }
-
+    } */
+/* 
     const onAddToCart = () => {
       //setItemCountVisible(false)
       //setBuyButtonVisibility(false)
       setCart([...cart, {quantity: count, data: product}])
-    };
+    }; */
 
 
     return (
