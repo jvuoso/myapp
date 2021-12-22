@@ -21,12 +21,6 @@ export const CartProvider = ({children}) => {
         for (1; counter < quantity; counter++) {
             array.push(item)
         }
-        //const message = `Agregaste ${quantity} ${item.name} `;
-        
-        //(quantity===1) ? alert(message) : alert(`${message}s`)
-
-        //setCart([...cart, {quantity: quantity, data: array}])
-
         setCart([...array])
         setReady(true);
 

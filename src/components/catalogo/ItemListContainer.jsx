@@ -44,7 +44,8 @@ const ItemListContainer = ( {greeting} ) => {
 
     if (cat) {   
         //products2.clear()
-/*       const db = getFirestore();
+        /*
+        const db = getFirestore();
         const itemsCollection = collection (db, "items");
         const q = query(itemsCollection, where("category", "==", cat ))
         getDocs(q).then( 
@@ -53,14 +54,15 @@ const ItemListContainer = ( {greeting} ) => {
               for (let prod of prods){
                   products2.push(prod)
               }
-            })  */
+            })  
+        */
          
         for (let product of products) {
             if (product.category === cat) {
                 products2.push(product)
             }
         }  
-        console.log("products2 despues de filtrar: ", products2)
+        //console.log("products2 despues de filtrar: ", products2)
         
     }
 
