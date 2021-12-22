@@ -21,6 +21,8 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 //import {useState, useEffect} from 'react'
 import {useCart} from '../../contexts/CartContext'
 //import {useState, useEffect} from "react"
+import {getFirestore, collection, getDocs, query, where} from "firebase/firestore"
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -66,6 +68,19 @@ export default function Navbar({product}) {
 
   const {cart} = useCart();
   const [products, setProducts] = React.useState([cart])
+  const [categories, setCategories] = React.useState([])
+
+  React.useEffect (() => {
+    const db = getFirestore();
+    const itemsCollection = collection (db, "categories");
+    getDocs(itemsCollection).then( 
+      snapshot => {
+        setCategories(snapshot.docs.map( (doc) => ({ id: doc.id, ...doc.data()} )))
+      })
+    
+  },[]);
+
+  //console.log("las categorias dinamicas:", categories);
 
   React.useEffect(() => {
     setProducts(cart);
@@ -74,6 +89,8 @@ export default function Navbar({product}) {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+ 
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -134,22 +151,14 @@ export default function Navbar({product}) {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <Button component={Link} to={"/cat/carne"} ><p>Carne</p></Button>
-      </MenuItem>
-      <MenuItem>
-        <Button component={Link} to={"/cat/pasta"}><p>Pasta</p></Button>
-      </MenuItem>
-      <MenuItem>
-        <Button component={Link} to={"/cat/pescado"} ><p>Pescado</p></Button>
-      </MenuItem>
-      <MenuItem>
-        <Button component={Link} to={"/cat/pizza"} ><p>Pizza</p></Button>
-      </MenuItem>
-      <MenuItem>
-        <Button component={Link} to={"/cat/sopa"} ><p>Sopa</p></Button>
-      </MenuItem>
-      
+      {categories.map( category => {
+          return(
+          <MenuItem  key={category.value}>
+              <Button component={Link} to={`/cat/${category.value}`} ><p>{category.value}</p></Button>
+          </MenuItem>
+          );
+      })}
+
     </Menu>
   );
 
@@ -217,6 +226,7 @@ export default function Navbar({product}) {
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
+  
     </Box>
   );
 }

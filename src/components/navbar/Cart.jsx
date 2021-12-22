@@ -10,10 +10,9 @@ import Button from '@mui/material/Button';
 
 const Cart = () => {
    const {cart} = useCart();
-   //const {setReady} = useCart();
    const fixedCart = fixCart(cart)
    var cartSum = removeDuplicates(doCartSum(fixedCart, cart))
-   //cartSum = doSuperFix(cartSum)
+   //cartSum = doSuperFix(cartSum);
    //setReady(false);
 
     return( 
@@ -36,7 +35,6 @@ const Cart = () => {
             {Boolean(cartSum.length) && (<h2><b>Precio total: ${totalPrice(cartSum)}</b></h2>)}
            
         </div>
-
     );
 };
 
@@ -60,29 +58,21 @@ const fixCart = (cart) => {
 }; 
 
 const removeDuplicates = (cart) => {
-/*     let unique_array = cart.filter(function(elem, index, self) {
-        return index == self.indexOf(elem);
-    }); */
     let index = -1;
     let unique_array = cart
-   // console.log("queda asi: ", unique_array )
 
-     for (let i=1; i<=15; i++){
+    for (let i=1; i<=15; i++){
         if (howMany(cart, i.toString()) >1){
-
             index = cart.findIndex((obj) => { if (obj.id == i.toString()) { return true } else { return false }});
-            console.log("El item ",index, "esta repetido")
             unique_array = unique_array.filter(f => f !== cart[index])
         }
-            
     }
-    console.log("queda asi: ", unique_array)
     return unique_array
 }
 
 const doCartSum = (fixedCart, cart) => {
     var cartSum = []
-  // if (cart.) 
+ 
    for (var product of fixedCart) {
        var prod = {"id": product.id, "quantity": howMany(cart, product.id), "totalPrice": (parseInt(product.price)*howMany(cart, product.id)), "product": product }
        cartSum.push(prod)
@@ -96,21 +86,6 @@ const totalPrice = (cartSum) => {
         totalPrice += product.totalPrice
     }
     return totalPrice
-}
-
-const doSuperFix = (cartSum) =>{
-
-    let counts = 0
-    cartSum.forEach( (x) => counts = (counts + 1))
-    //cartSum.forEach(  (x) => { counts[x] = (counts[x] || 0) + 1 });
-    let i = "1";
-    for (let prod of cartSum){
-        if ((howMany(cartSum, i))>1){
-            cartSum = cartSum.filter(f => f !== prod)
-        }
-    }
-    
-    return cartSum
 }
 
 export default Cart

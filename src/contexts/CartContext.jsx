@@ -28,11 +28,7 @@ export const CartProvider = ({children}) => {
 
     function delProd (item, quantity){
 
-        //console.log("borrando ese item:", item);
-
         array = array.filter(f => f !== item)
-        
-        //console.log("El cart quedaria asi: ",array)
         setCart([...array])
     }
     

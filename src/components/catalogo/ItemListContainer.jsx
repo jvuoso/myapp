@@ -75,22 +75,16 @@ const ItemListContainer = ( {greeting} ) => {
         return (
  
 
-                    <Box sx={{ width: '100%', height: '100%'}}>
-               {/*  <Paper elevation = {0}/>
-                <Paper elevation={4}> */}
+            <Box sx={{ width: '100%', height: '100%'}}>
                    
-                    <Grid container spacing={6} direction="column" justifyContent="space-between" alignItems="center"> 
-                     
-                   {/*  <Box component="span" sx={{ color: 'primary.main', fontSize: 20 }}> */}
+                <Grid container spacing={6} direction="column" justifyContent="space-between" alignItems="center"> 
                    <Grid item xs={6}>
                         <h1>{greeting} {cat}</h1>
                     </Grid>
                     <Grid item xs={6} md={4}>
                         <ItemList products = {products2}></ItemList> 
                     </Grid>
-                    {/* </Box> */}
                     </Grid>
-                {/* </Paper>  */}
             </Box>
             
         );
