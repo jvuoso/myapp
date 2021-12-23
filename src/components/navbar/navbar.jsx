@@ -147,7 +147,9 @@ export default function Navbar({product}) {
       }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
-    >
+    > 
+      <h4 style={{textAlign: "center", color: "grey"}}><b>Categories</b></h4>
+
       {categories.map( category => {
           return(
           <MenuItem  key={category.value}>

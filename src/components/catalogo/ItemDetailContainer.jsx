@@ -13,17 +13,6 @@ const ItemDetailContainer = () => {
 
     const [product, setProduct] = useState({})
     const {id} = useParams()
-/*     const getProductsAxios = async (id) =>{
-
-        await axios.get("../JSON/products.json").then((res)=>{
-
-            setProduct(res.data.find((prod) => prod.id === id))
-        })
-    }
-    
-     useEffect(() => {
-        setTimeout( () => getProductsAxios(id),100)
-    },[id]); */
 
     useEffect (() => {
         const db = getFirestore();

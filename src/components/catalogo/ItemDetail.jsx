@@ -17,26 +17,6 @@ import ItemCount from './ItemCount';
 
 const ItemDetail = ({ product }) => {
 
-    //const [itemCountVisible, setItemCountVisible] = useState(true);
-    //const [buyButtonVisibility, setBuyButtonVisibility] = useState(true);
-    //const [itemsCount, setItemsCount] = useState(0)
-    //const [count, setCount] = useState(0)
-    //const {cart, setCart} = useCart()
-    //const {setReady} = useCart();
-
-  
-    /* const onAdd = (count) => {
-      //setItemsCount(count);
-      setCount(count);
-    } */
-/* 
-    const onAddToCart = () => {
-      //setItemCountVisible(false)
-      //setBuyButtonVisibility(false)
-      setCart([...cart, {quantity: count, data: product}])
-    }; */
-
-
     return (
     <div>
         <h1></h1>
