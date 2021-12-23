@@ -79,7 +79,7 @@ const ItemCount = ({ stock, initial, product }) => {
           mx: 0.5,
         },
       }}>
-          {ready && (<Button component={Link} to="/cart" > Finalizar compra</Button>)}
+          {ready && (<Button component={Link} to="/cart" > Ir al carrito</Button>)}
           {ready  && (<Divider orientation="vertical" variant="middle" flexItem />)}
           {ready && (<Button component={Link} to="/" > Seguir comprando</Button>)}
           {!ready  &&(<Button onClick = {onAdd}>Agregar al carrito <AddShoppingCartIcon /></Button>)}

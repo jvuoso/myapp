@@ -4,6 +4,7 @@ import Cart from './components/navbar/Cart';
 import { Routes, Route } from "react-router-dom";
 import ItemListContainer from './components/catalogo/ItemListContainer'
 import ItemDetailContainer from './components/catalogo/ItemDetailContainer';
+import Formulario from './components/catalogo/Formulario';
 import Grid from '@mui/material/Grid'
 //import { useState, createContext } from "react"
 import {CartProvider} from "./contexts/CartContext"
@@ -22,6 +23,7 @@ function App() {
           <Route path="item/:id" element={<ItemDetailContainer/>} />
           <Route path="cart" element={<Cart/>} />
           <Route path="cat/:cat" element={<ItemListContainer greeting="Categoria:"/> }/>
+          <Route path="form" element={<Formulario/>}/>
       </Routes>
       </Grid>
       </CartProvider>

@@ -9,11 +9,9 @@ import Button from '@mui/material/Button';
 
 
 const Cart = () => {
-   const {cart} = useCart();
+   const {cart, setTotalPrice} = useCart();
    const fixedCart = fixCart(cart)
    var cartSum = removeDuplicates(doCartSum(fixedCart, cart))
-   //cartSum = doSuperFix(cartSum);
-   //setReady(false);
 
     return( 
         <div>
@@ -32,8 +30,8 @@ const Cart = () => {
             })}
             {!Boolean(cartSum.length) && (<h3>UPS! Tu carrito se encuentra vacio.</h3>)}
             {!Boolean(cartSum.length) && (<Button component={Link} to="/" > Home</Button>)}
-            {Boolean(cartSum.length) && (<h2><b>Precio total: ${totalPrice(cartSum)}</b></h2>)}
-           
+            {Boolean(cartSum.length) && (<h2><b>Precio total: ${totalPrice(cartSum, setTotalPrice)}</b></h2>)}
+            {Boolean(cartSum.length) && (<Button component={Link} to="/form" ><h2><b>Finalizar compra</b></h2></Button>)}
         </div>
     );
 };
@@ -50,11 +48,8 @@ const howMany = (cart, id) => {
 }
 
 const fixCart = (cart) => {
-    //console.log("Cart: ", cart)
     var uniq = [...new Set(cart)];
-    //console.log("Uniq: ", uniq)
     return uniq
-    //return array.some(cartItem => cartItem.id === item.id)
 }; 
 
 const removeDuplicates = (cart) => {
@@ -80,12 +75,13 @@ const doCartSum = (fixedCart, cart) => {
    return cartSum
 }
 
-const totalPrice = (cartSum) => {
+const totalPrice = (cartSum, setTotalPrice) => {
     let totalPrice =0
     for (var product of cartSum){
         totalPrice += product.totalPrice
     }
+    setTotalPrice(totalPrice)
     return totalPrice
 }
 
-export default Cart
+export default Cart;
