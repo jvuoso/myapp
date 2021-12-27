@@ -38,8 +38,8 @@ El formulario de finalización servirá para obtener los datos del usuario y gen
 Una vez completados los datos, se creará la orden de compra y el usuario obtendrá el codigo de dicha compra, para poder acceder a la misma, si así lo desea, a través de la web de firebase.
 
 <p align="center">
-![image](./img/form.JPG)
-![image](./img/codigo.JPG)
+ <img src="./img/form.JPG" />
+ <img src="./img/codigo.JPG" />
 <p align="center">
 
 
