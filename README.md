@@ -8,17 +8,23 @@ Al comenzar, en la pantalla principal se observan todos los productos disponible
 ## Product details
 Luego, cuando se quiera saber más informacion sobre cualquiera de los productos disponibles, debe hacerse click en 'Más información'. Aquí verá información detallada sobre el producto y podrá agregarlo al carrito en caso de que desee comprarlo posteriormente.
 
-![image](./img/detail.JPG)
+<p align="center">
+    <img src="./img/detail.JPG" />
+<p align="center">
 
 Una vez agregado al carrito el producto (la cantidad deseada del mismo), puede seguirse comprando o ir al carrito para ver los productos que han sigo agregados hasta el momento.
 
-![image](./img/detail2.JPG)
+<p align="center">
+    <img src="./img/detail2.JPG" />
+<p align="center">
 
 ## Categories
 
 En todo momento del flujo de compra puede filtrarse los productos por su categoría, clickeando en el drop-down del margen superior izquierdo. Este filtro mostrará todos los productos de la categoría que haya seleccionado. 
 
-![image](./img/categories.JPG)
+<p align="center">
+    <img src="./img/categories.JPG" />
+<p align="center">
 
 Desde allí, puede nuevamente seleccionarse el producto requerido para ser posteriormente agregado al carrito.
 
@@ -28,7 +34,7 @@ En todo momento del flujo de compra (siempre y cuando la cantidad de productos s
 Una vez en el carrito pueden eliminarse los productos que se deseen, finalizar la compra, o bien seguir comprando. Recordemos que en todo momento puede clickearse 'Food Market' para ser redirigidos a la pagina principal.
 
 <p align="center">
-![image](./img/carrito.JPG)
+    <img src="./img/carrito.JPG" />
 <p align="center">
 
 
