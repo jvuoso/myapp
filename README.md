@@ -1,4 +1,5 @@
 # Food Market
+### Created by Juan Ignacio Vuoso - CoderHouse 2021
 
 ## Home
 Al comenzar, en la pantalla principal se observan todos los productos disponibles para compra ("home" del web site, ruta '/')
@@ -38,7 +39,7 @@ Una vez en el carrito pueden eliminarse los productos que se deseen, finalizar l
 <p align="center">
 
 
-## End purchase / Last Form
+## End purchase / Check out
 
 El formulario de finalización servirá para obtener los datos del usuario y generar la orden de compra, la cual será cargada en la base de datos de firebase.
 Una vez completados los datos, se creará la orden de compra y el usuario obtendrá el codigo de dicha compra, para poder acceder a la misma, si así lo desea, a través de la web de firebase.

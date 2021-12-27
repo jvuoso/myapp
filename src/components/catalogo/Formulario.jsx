@@ -3,6 +3,7 @@ import {getFirestore, collection, addDoc} from "firebase/firestore"
 import { useState } from "react";
 import { useForm } from "react-cool-form";
 import Input from '@mui/material/Input';
+import Swal from 'sweetalert2'
 
 var endPurchase = false; 
 
@@ -29,16 +30,20 @@ const Formulario = () => {
      
         addDoc(ordersCollection, order).then( ({ id }) => {
              setPurchaseId(id);
+             Swal.fire({
+                title: "Compra realizada exitosamente",
+                text: `Su codigo de operacion es ${id}`,
+                icon: "success",
+                confirmButtonText: "OK"
+            });
          });
-     
+
          endPurchase = true;
      }
 
     const { form, use } = useForm({
         defaultValues: { name: "", email: "", phone: "" },
         onSubmit: (values) => checkOut(values, cart)
-        //(values) => alert(JSON.stringify(values, undefined, 2))
-        
       });
       const errors = use("errors");
     
@@ -60,8 +65,6 @@ const Formulario = () => {
           </div>
           <Input type="submit" />
         </form>)}
-        {Boolean(endPurchase) && (<h2><b>Compra realizada con éxito!</b></h2>)}
-        {Boolean(endPurchase) && (<h4>Su codigo de operación es {purchaseId} </h4>)}
         </div>
       );
 }
