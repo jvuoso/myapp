@@ -1,9 +1,8 @@
 import { useCart } from '../../contexts/CartContext'
 import {getFirestore, collection, addDoc} from "firebase/firestore"
 import { useState } from "react";
-import ReactDOM from "react-dom";
 import { useForm } from "react-cool-form";
-import "./styles.css";
+import Input from '@mui/material/Input';
 
 var endPurchase = false; 
 
@@ -13,7 +12,6 @@ const Formulario = () => {
     const [purchaseId, setPurchaseId] = useState(0)
 
     const checkOut = (values, cart) => {
-        // console.log(values)
      
         const order = {
             buyer: {
@@ -31,7 +29,6 @@ const Formulario = () => {
      
         addDoc(ordersCollection, order).then( ({ id }) => {
              setPurchaseId(id);
-             console.log(id)
          });
      
          endPurchase = true;
@@ -42,26 +39,26 @@ const Formulario = () => {
         onSubmit: (values) => checkOut(values, cart)
         //(values) => alert(JSON.stringify(values, undefined, 2))
         
-        
       });
       const errors = use("errors");
     
       return (
         <div>
-         {!Boolean(endPurchase) && (<form  ref={form} noValidate>
+         {!Boolean(endPurchase) && (<h1>Complete sus datos para finalizar</h1>)}
+         {!Boolean(endPurchase) &&(<form  ref={form} noValidate>
           <div>
-            <input name="name" placeholder="Name" required />
+            <Input name="name" placeholder="Name" required />
             {errors.name && <p>{errors.name}</p>}
           </div>
           <div>
-            <input name="email" placeholder="Email" required />
+            <Input name="email" placeholder="Email" required />
             {errors.email && <p>{errors.email}</p>}
           </div>
           <div>
-            <input name="phone" placeholder="Phone number" required />
+            <Input name="phone" placeholder="Phone number" required />
             {errors.phone && <p>{errors.phone}</p>}
           </div>
-          <input type="submit" />
+          <Input type="submit" />
         </form>)}
         {Boolean(endPurchase) && (<h2><b>Compra realizada con éxito!</b></h2>)}
         {Boolean(endPurchase) && (<h4>Su codigo de operación es {purchaseId} </h4>)}

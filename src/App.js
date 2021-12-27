@@ -6,10 +6,7 @@ import ItemListContainer from './components/catalogo/ItemListContainer'
 import ItemDetailContainer from './components/catalogo/ItemDetailContainer';
 import Formulario from './components/catalogo/Formulario';
 import Grid from '@mui/material/Grid'
-//import { useState, createContext } from "react"
 import {CartProvider} from "./contexts/CartContext"
-//import {useState, useEffect} from 'react'
-//import {doc, getDoc,getFirestore, collection, getDocs} from "firebase/firestore"
 
 function App() {
 

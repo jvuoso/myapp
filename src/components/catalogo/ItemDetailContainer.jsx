@@ -1,12 +1,6 @@
 import {useState, useEffect} from 'react'
-//import ItemList from './ItemList'
-//import Paper from '@mui/material/Paper'
-//import Box from '@mui/material/Box'
 import ItemDetail from './ItemDetail'
-//import ItemListContainer from './ItemListContainer'
 import { useParams } from "react-router-dom"
-// eslint-disable-next-line
-//import axios from "axios"
 import {getFirestore, collection, getDocs, query, where} from "firebase/firestore"
 
 const ItemDetailContainer = () => {

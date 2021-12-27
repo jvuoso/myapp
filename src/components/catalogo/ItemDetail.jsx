@@ -7,19 +7,13 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-//import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ItemCount from './ItemCount';
-//import { Link } from "react-router-dom"
-//import {useState} from "react"
-//import {useCart} from '../../contexts/CartContext'
-/* import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'; */
 
 const ItemDetail = ({ product }) => {
 
     return (
     <div>
-        <h1></h1>
       <Card sx={{ maxWidth: 350 }}>
         <CardMedia
           component="img"

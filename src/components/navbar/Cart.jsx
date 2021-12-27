@@ -1,10 +1,6 @@
-//import {useState, useEffect} from 'react'
 import { useCart } from '../../contexts/CartContext'
 import Item from '../catalogo/Item/Item'
-//import axios from "axios"
-//import {useState} from 'react'
 import { Link } from "react-router-dom"
-//import {set} from '../../contexts/CartContext'
 import Button from '@mui/material/Button';
 
 

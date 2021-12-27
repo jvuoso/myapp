@@ -5,12 +5,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-//import ItemCount from '../ItemCount'
 import { Link } from "react-router-dom"
-//import styled from 'styled-components';
 import { useCart } from '../../../contexts/CartContext'
-//import Box from '@mui/material/Box';
-//import Divider from '@mui/material/Divider';
 
 
 export default function Item({product, isCart, quantity, totalPrice}) {

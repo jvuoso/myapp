@@ -9,11 +9,9 @@ export const CartProvider = ({children}) => {
 
     const [item] = useState(null);
     const [id] = useState(null);
-    //const [ishere] = useState(Boolean);
     const [cart, setCart] = useState([])
     const [ready, setReady] = useState(Boolean)
     const [totalPrice, setTotalPrice] = useState(0);
-    //const value = {cart, setCart}
     const value = { cart, item, id, addProd, ready, setReady, delProd, totalPrice, setTotalPrice } 
 
     function addProd(item, quantity){
