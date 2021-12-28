@@ -4,6 +4,7 @@ import { useForm } from "react-cool-form";
 import Input from '@mui/material/Input';
 import Swal from 'sweetalert2'
 import {cartSum} from '../navbar/Cart'
+//import { Navigate } from 'react-router-dom'
 
 var endPurchase = false; 
 
@@ -11,7 +12,7 @@ const Formulario = () => {
 
     const {cart, totalPrice, cleanCart} = useCart();
 
-    const checkOut = (values, cart) => {
+    const checkOut = (values) => {
      
         const order = {
             buyer: {
@@ -44,8 +45,6 @@ const Formulario = () => {
          });
 
          batch.commit()
-
-         //endPurchase = true;
      }
 
     const { form, use } = useForm({
