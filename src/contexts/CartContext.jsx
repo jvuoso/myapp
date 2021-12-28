@@ -12,11 +12,12 @@ export const CartProvider = ({children}) => {
     const [cart, setCart] = useState([])
     const [ready, setReady] = useState(Boolean)
     const [totalPrice, setTotalPrice] = useState(0);
-    const value = { cart, item, id, addProd, ready, setReady, delProd, totalPrice, setTotalPrice } 
+    const value = { cart, item, id, addProd, ready, setReady, delProd, totalPrice, setTotalPrice, cleanCart}
+
 
     function addProd(item, quantity){
         var counter = 0;
-        
+
         for (1; counter < quantity; counter++) {
             array.push(item)
         }
@@ -31,6 +32,10 @@ export const CartProvider = ({children}) => {
         setCart([...array])
     }
     
+    function cleanCart (){
+        array = []
+        setCart([...array]);
+    }
 
     return (
         <CartContext.Provider value={value}>

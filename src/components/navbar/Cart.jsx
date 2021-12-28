@@ -3,16 +3,19 @@ import Item from '../catalogo/Item/Item'
 import { Link } from "react-router-dom"
 import Button from '@mui/material/Button';
 
+export var cartSum = []
+
 
 const Cart = () => {
    const {cart, setTotalPrice} = useCart();
    const fixedCart = fixCart(cart)
-   var cartSum = removeDuplicates(doCartSum(fixedCart, cart))
+   cartSum = removeDuplicates(doCartSum(fixedCart, cart))
 
     return( 
         <div>
             <h1>Carrito de compras</h1>
             {cartSum.map(product => {
+                
                 return(
                 <div key={product.id}>
                 <Item 
@@ -42,6 +45,7 @@ const howMany = (cart, id) => {
     //console.log("hay", quantity, "elementos")
     return quantity;
 }
+//export default howMany;
 
 const fixCart = (cart) => {
     var uniq = [...new Set(cart)];

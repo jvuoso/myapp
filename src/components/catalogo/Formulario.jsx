@@ -1,16 +1,15 @@
 import { useCart } from '../../contexts/CartContext'
-import {getFirestore, collection, addDoc} from "firebase/firestore"
-import { useState } from "react";
+import {getFirestore, collection, addDoc, writeBatch, doc} from "firebase/firestore"
 import { useForm } from "react-cool-form";
 import Input from '@mui/material/Input';
 import Swal from 'sweetalert2'
+import {cartSum} from '../navbar/Cart'
 
 var endPurchase = false; 
 
 const Formulario = () => {
 
-    const {cart, totalPrice} = useCart();
-    const [purchaseId, setPurchaseId] = useState(0)
+    const {cart, totalPrice, cleanCart} = useCart();
 
     const checkOut = (values, cart) => {
      
@@ -20,7 +19,7 @@ const Formulario = () => {
                 email: values.email,
                 phone: values.phone
             },
-            items: cart,
+            items: cartSum,
             date: new Date(Date.now()).toISOString(),
             totalPrice: totalPrice
         };
@@ -29,16 +28,24 @@ const Formulario = () => {
         const ordersCollection = collection(db, "orders");
      
         addDoc(ordersCollection, order).then( ({ id }) => {
-             setPurchaseId(id);
              Swal.fire({
                 title: "Compra realizada exitosamente",
                 text: `Su codigo de operacion es ${id}`,
                 icon: "success",
                 confirmButtonText: "OK"
             });
+            cleanCart();
          });
 
-         endPurchase = true;
+         const batch = writeBatch(db);
+         cartSum.forEach((item) => {
+            const itemRef = doc(db, "items", item.id)
+            batch.update(itemRef, {stock: parseInt(item.product.stock) - item.quantity});
+         });
+
+         batch.commit()
+
+         //endPurchase = true;
      }
 
     const { form, use } = useForm({

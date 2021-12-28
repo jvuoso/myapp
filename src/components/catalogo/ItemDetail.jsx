@@ -14,6 +14,7 @@ const ItemDetail = ({ product }) => {
 
     return (
     <div>
+      <h1> </h1>
       <Card sx={{ maxWidth: 350 }}>
         <CardMedia
           component="img"
