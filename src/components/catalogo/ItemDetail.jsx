@@ -1,7 +1,3 @@
-//import ItemDetailContainer from './ItemDetailContainer'
-//import { Routes, Route } from "react-router-dom";
-//import {useState, useEffect} from 'react';
-//import Item from "./Item/Item";
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -31,14 +27,8 @@ const ItemDetail = ({ product }) => {
               {product.description}
           </Typography>
           <ItemCount stock={product.stock} initial={1} product={product}/>
-          {/* <ItemCount stock={product.stock} initial={1} onAdd={onAdd}/> */}
         </CardContent>
-{/*           <Button onClick = {onAddToCart}>
-            Agregar al carrito
-            <AddShoppingCartIcon />
-          </Button> */}
         <CardActions>
-          {/* <Link to={`/cart`}>Finalizar compra</Link> */}
         </CardActions>
       </Card>
     </div>
